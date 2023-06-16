@@ -9,41 +9,24 @@ namespace Catventure.Input
 {
     public class Movement : MonoBehaviour
     {
-        [SerializeField] private InputActionReference movement;
-        [SerializeField] private TextMeshProUGUI debugText;
-
-        private Vector2 movementInput;
+        [SerializeField] private float speed = .5f;
+        [SerializeField] private InputActionReference movement; //TODO Add to Zenject
         
         private void Start()
         {
-            /*
             Observable.EveryUpdate() // Update stream
                 .Where(_ => movement.action.IsPressed()) // Filter on press any Key
-                .Select(_ => movement.action.) // Select pressed key
-                .Subscribe(OnKeyDown)
+                .Select(_ => movement.action.ReadValue<Vector2>()) // Select pressed key
+                .Subscribe(MoveObject)
                 .AddTo(this); // Link subscribe to GameObject
-             */
         }
 
-        private void Update()
+        private void MoveObject(Vector2 direction)
         {
-            // IsPressed
-            debugText.text = movement.action.IsPressed()
-                ? movement.action.ReadValue<Vector2>().ToString()
-                : "Nothing pressed";
-        }
-
-        private void OnKeyDown(string keyCode)
-        {
-            switch (keyCode)
-            {
-                case "w":
-                    Debug.Log("keyCode: W");
-                    break;
-                default:
-                    Debug.Log("keyCode: " + keyCode);
-                    break;
-            }
+            var position = transform.position;
+            position.x += direction.x * speed * Time.deltaTime;
+            position.z += direction.y * speed * Time.deltaTime;
+            gameObject.transform.position = position;
         }
     }
 }
