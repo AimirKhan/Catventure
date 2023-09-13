@@ -19,7 +19,6 @@ namespace Catventure.Input
         private CharacterController characterController;
         private bool isGroundedPlayer;
         private float gravityValue = -9.8f;
-        private float gravityScale = 1;
 
         private void Awake()
         {
