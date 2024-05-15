@@ -1,5 +1,4 @@
 using Catventure;
-using UnityEngine;
 using Zenject;
 
 namespace Installer.Main
@@ -13,7 +12,7 @@ namespace Installer.Main
 
         private void Bind()
         {
-            Container.BindInterfacesTo<PlayerParams>().AsSingle();
+            //Container.BindInterfacesTo<PlayerParams>().AsSingle();
         }
     }
 }

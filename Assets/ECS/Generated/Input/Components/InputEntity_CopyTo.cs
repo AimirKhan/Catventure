@@ -18,7 +18,14 @@ public partial class InputEntity
 	public void CopyComponentTo(IComponent component)
 	{
 		#if !ENTITAS_REDUX_NO_IMPL
-
+		if (component is ECS.Player.PlayerInputComponent PlayerInput)
+		{
+			CopyPlayerInputTo(PlayerInput);
+		}
+		else if (component is ECS.Input.InputComponent Input)
+		{
+			IsInput = true;
+		}
 		#endif
 	}
 

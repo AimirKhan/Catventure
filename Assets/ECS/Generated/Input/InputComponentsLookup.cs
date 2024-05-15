@@ -13,23 +13,27 @@ using JCMG.EntitasRedux;
 
 public static class InputComponentsLookup
 {
+	public const int Input = 0;
+	public const int PlayerInput = 1;
 
-
-	public const int TotalComponents = 0;
+	public const int TotalComponents = 2;
 
 	public static readonly string[] ComponentNames =
 	{
-
+		"Input",
+		"PlayerInput"
 	};
 
 	public static readonly System.Type[] ComponentTypes =
 	{
-
+		typeof(ECS.Input.InputComponent),
+		typeof(ECS.Player.PlayerInputComponent)
 	};
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
-
+		{ typeof(ECS.Input.InputComponent), 0 },
+		{ typeof(ECS.Player.PlayerInputComponent), 1 }
 	};
 
 	/// <summary>

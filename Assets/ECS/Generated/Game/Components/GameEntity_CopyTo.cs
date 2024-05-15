@@ -18,7 +18,26 @@ public partial class GameEntity
 	public void CopyComponentTo(IComponent component)
 	{
 		#if !ENTITAS_REDUX_NO_IMPL
-
+		if (component is ECS.Player.PlayerComponent Player)
+		{
+			IsPlayer = true;
+		}
+		else if (component is ECS.Views.Components.ViewComponent View)
+		{
+			CopyViewTo(View);
+		}
+		else if (component is ECS.Movement.Components.PositionComponent Position)
+		{
+			CopyPositionTo(Position);
+		}
+		else if (component is ECS.Movement.Components.Moving Moving)
+		{
+			IsMoving = true;
+		}
+		else if (component is ECS.Movement.Components.DirectionComponent Direction)
+		{
+			CopyDirectionTo(Direction);
+		}
 		#endif
 	}
 

@@ -13,23 +13,39 @@ using JCMG.EntitasRedux;
 
 public static class GameComponentsLookup
 {
+	public const int Direction = 0;
+	public const int Moving = 1;
+	public const int Position = 2;
+	public const int Player = 3;
+	public const int View = 4;
 
-
-	public const int TotalComponents = 0;
+	public const int TotalComponents = 5;
 
 	public static readonly string[] ComponentNames =
 	{
-
+		"Direction",
+		"Moving",
+		"Position",
+		"Player",
+		"View"
 	};
 
 	public static readonly System.Type[] ComponentTypes =
 	{
-
+		typeof(ECS.Movement.Components.DirectionComponent),
+		typeof(ECS.Movement.Components.Moving),
+		typeof(ECS.Movement.Components.PositionComponent),
+		typeof(ECS.Player.PlayerComponent),
+		typeof(ECS.Views.Components.ViewComponent)
 	};
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
-
+		{ typeof(ECS.Movement.Components.DirectionComponent), 0 },
+		{ typeof(ECS.Movement.Components.Moving), 1 },
+		{ typeof(ECS.Movement.Components.PositionComponent), 2 },
+		{ typeof(ECS.Player.PlayerComponent), 3 },
+		{ typeof(ECS.Views.Components.ViewComponent), 4 }
 	};
 
 	/// <summary>
