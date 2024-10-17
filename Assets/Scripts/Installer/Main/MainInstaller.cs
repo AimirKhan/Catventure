@@ -1,5 +1,4 @@
-using Catventure;
-using UnityEngine;
+using Game.Services;
 using Zenject;
 
 namespace Installer.Main

@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using Catventure;
+using Game.Services;
 using TMPro;
 using UniRx;
 using UnityEngine;
 using Zenject;
 
-public class DebugInfo : MonoBehaviour
+namespace Game
 {
-    [Inject] private IPlayerParams playerParams;
-    [SerializeField] private TextMeshProUGUI currentSpeed;
-    
-    void Start()
+    public class DebugInfo : MonoBehaviour
     {
-        playerParams.PlayerSpeed
-            .Subscribe(v => currentSpeed.text = "Current speed: " + v)
-            .AddTo(this);
+        [Inject] private IPlayerParams playerParams;
+        [SerializeField] private TextMeshProUGUI currentSpeed;
+
+        private void Start()
+        {
+            playerParams.PlayerSpeed
+                .Subscribe(v => currentSpeed.text = "Current speed: " + v)
+                .AddTo(this);
+        }
     }
 }

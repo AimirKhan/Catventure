@@ -75,6 +75,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "c743095e-b16f-4773-b5cd-907746e1d3b4",
+                    "path": "<Joystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "WASD",
                     "id": "df2fd602-2f0d-4fc4-b3ec-7b70d81401ed",
                     "path": "2DVector(mode=1)",
@@ -128,17 +139,6 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "c8b243c8-4db8-4469-bf62-2ebea9b8784d",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

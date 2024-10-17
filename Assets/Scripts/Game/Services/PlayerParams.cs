@@ -1,6 +1,6 @@
 using UniRx;
 
-namespace Catventure
+namespace Game.Services
 {
     public enum EPlayerState
     {

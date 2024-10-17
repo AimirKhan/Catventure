@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class Hud : MonoBehaviour
+namespace Services
 {
-    public void Initialize()
+    public class Hud
     {
-        Debug.Log("HUD Initialized!");
+        public async UniTask Init()
+        {
+            Debug.Log("HUD Initialized!");
+        }
     }
 }

@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/main/index.uss?fileID=7433441132597879392&amp;guid=c77987c177fd71245acbc9757a01eb01&amp;type=3#index" />
+    <ui:VisualElement name="Panel" class="panel" style="left: -39%;">
+        <ui:Label tabindex="-1" text="Кафе" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TitleText" class="header" />
+        <ui:ListView fixed-item-height="50" name="list" style="height: 120px; margin: 10px;" />
+    </ui:VisualElement>
+</ui:UXML>

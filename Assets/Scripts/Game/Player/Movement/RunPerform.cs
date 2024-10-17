@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Catventure;
+using Game.Services;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace Catventure.Input
+namespace Game.Player.Movement
 {
     public class RunPerform : MonoBehaviour
     {

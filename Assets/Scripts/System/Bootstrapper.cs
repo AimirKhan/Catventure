@@ -1,19 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Services;
 using UnityEngine;
 
-public class Bootstrapper : MonoBehaviour
+namespace System
 {
-    [SerializeField] private Hud _hud;
-
-    private void Awake()
+    public class Bootstrapper : MonoBehaviour
     {
-        Services();
-    }
+        private Hud _hud;
 
-    private void Services()
-    {
-        _hud.Initialize();
+        private void Awake()
+        {
+            Services();
+        }
+
+        private async void Services()
+        {
+            var hud = new Hud();
+            await hud.Init();
+        
+            Debug.Log("All services are initialized");
+        }
     }
 }
